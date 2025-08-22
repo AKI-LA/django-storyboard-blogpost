@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+     body{
+            background-image:radial-gradient(paleturquoise,lightskyblue);
+        }
+</style>
+</head>
+
+<body class="container mt-4">
+<nav> <h1>Blog Posts</h1></nav>
+    <h1>Create New Post</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save Post</button>
+    </form>
+    <a href="{% url 'post_list' %}" class="btn btn-secondary mt-3">Back to Posts</a>
+</body>
+</html>
